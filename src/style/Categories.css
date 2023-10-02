@@ -1,0 +1,53 @@
+.categoryContainer {
+  margin-top: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  margin-left: 20px;
+  margin-right: 60px;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    margin: 0;
+    justify-content: center;
+  }
+  
+  .category-item {
+    flex: 1;
+    max-width: calc(33.333% - 20px);
+    text-align: center;
+  }
+  
+  .category-button {
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .category-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-top: 60px;
+    animation: fadeInDown 1.6s ease-in-out;
+  }
+
+  
+  .category-name {
+    margin-top: 28px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    animation: fadeInDown 1.6s ease-in-out;
+    font-size: 20px;
+    font-family: fantasy;
+
+  }
+  

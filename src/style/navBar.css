@@ -1,0 +1,94 @@
+.header {
+  top: 0;
+  left: 30;
+  width: 100%;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: sticky;
+  overflow:visible;
+  z-index: 1;
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 70px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 10px; /* Add spacing between the image and text */
+}
+
+.logo-text a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the text */
+  font-size: 35px;
+  text-decoration: none;
+  color: blue;
+  font-family: 'Comic Sans MS';
+  text-shadow: 2px 2px 8px #FF0000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: right; /* Align items to the right */
+  flex: 1; /* Allow navbar to take the remaining space */
+  margin-right: 100px;
+  text-shadow: 2px 2px 8px #FF0000;
+  
+}
+
+/* Recipes, My recipes, sign in */
+.navbar a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: blue;
+  font-size: 22px;
+  
+}
+
+.logged-in {
+  margin-left: 30px;
+  color: #FF0000;
+  max-width: 70px; /* Adjust the max-width as needed */
+  word-wrap: break-word;
+}
+
+/* Add vertical line without affecting the layout */
+.navbar-link.sign-in {
+  display: flex;
+  align-items: center;
+  position: relative; /* Create a positioning context */
+}
+
+.navbar-link.sign-in::before {
+  content: "";
+  background-color: #ccc;
+  width: 2px; /* Adjust the width of the vertical line */
+  height: 40px; /* Adjust the height of the vertical line */
+  position: absolute;
+  top: 50%;
+  left: -10px; /* Adjust the positioning as needed */
+  transform: translateY(-50%);
+}
+
+
+/* Adjust the position of the image */
+.navbar-link.sign-in img {
+  margin-left: 10px; /* Adjust the spacing between the "Sign In" text and the image */
+}
+
+.logo-sign {
+    margin-left: 10px;
+    width: 40px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px; /* Add spacing between the image and text */
+  }

@@ -1,0 +1,84 @@
+/* CSS for Recipe Cards */
+
+.heading1-category {
+    animation: fadeInDown 1.6s ease-in-out;
+    margin-top: 30px;
+    font-size: 2.8rem;
+    font-family: cursive;
+    color: #333;
+    text-align: center;
+    background-image: url('category.jpg'); /* Set the correct path to your image */
+    background-repeat: no-repeat;
+    background-position: center ;
+    margin-bottom: 20px;
+    height: 60px;
+    padding: 40px 20px;
+    background-size: 40% auto;
+  }
+
+
+.category-cards {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .category-card {
+    width: 400px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none; /* Remove underlines from links */
+  
+    /* Center align content */
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    color: #333;
+    animation: fadeInDown 1.6s ease-in-out;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-20px);
+  }
+  
+  .category-card-header {
+    background-color: #f95151; /* Change this to your desired header background color */
+    padding: 1px;
+    width: 100%;
+    color: #fff; /* Text color for header */
+    text-align: center;
+  }
+  
+  
+  .category-card-body {
+      overflow: hidden;
+      padding: 10px;
+      text-overflow: ellipsis;
+      white-space: wrap;
+      overflow: hidden;
+      margin: 10px 0;
+      background-color: rgb(246, 241, 186);
+    }
+    
+    .category-card-body p {
+      /* margin-bottom: 20px; */
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* number of lines for description */
+      -webkit-box-orient: vertical;
+      max-height: 4em;
+    }
+    
+  
+
+
+    
+
+    
+  

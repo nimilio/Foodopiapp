@@ -1,0 +1,83 @@
+/* Footer Container */
+.footer {
+    background-color: #938f8f; /* Change this to your preferred background color */
+    color: #fff; /* Text color for the footer */
+    padding: 20px 0; /* Adjust padding as needed */
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  /* Footer Content Container */
+  .footer-content {
+    max-width: 1200px; /* Adjust the maximum width based on your design */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Footer Sections */
+  .footer-section {
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the start */
+    min-height: 200px; /* Adjust the height as needed */
+  }
+  
+  /* Header for Each Footer Section */
+  .footer-section h3 {
+    font-size: 24px; /* Adjust the header font size */
+    text-align: top;
+  }
+  
+  /* Links in the Footer */
+  .footer-section a {
+    color:  #811515; /* Link text color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add a smooth transition effect to links */
+  }
+  
+  .footer-section a:hover {
+    color: #ff6600; /* Change link color on hover */
+  }
+  
+  /* Social Media Icons */
+  .social-icons {
+    font-size: 24px; /* Adjust the icon size */
+    margin-top: 10px;
+  }
+  
+  /* Recipe Thumbnails */
+  .recipe-thumbnail {
+    max-width: 100px; /* Adjust the thumbnail size */
+    margin: 10px 0;
+  }
+  
+  /* Copyright Text */
+  .copyright {
+    margin-top: 50px;
+    font-size: 15px; /* Adjust the font size */
+    text-align: center;
+    margin-bottom: 50px;
+    color:  #811515; /* Link text color */
+    font-family: 'Comic Sans MS';
+
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-section {
+      flex: none;
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  

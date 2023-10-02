@@ -1,0 +1,67 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    cursor: pointer;
+    position: relative;
+    padding-right: 5px;
+    padding-bottom: 10px;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    top: 140%;
+    left: 30px;
+    background-color: #fff;
+    border: 1px solid #5a68d2;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 300px;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    cursor: pointer;
+  }
+  
+
+  .arrow {
+    position: absolute;
+    top: 60%;
+    right: -15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;
+  }
+  
+  .arrow.open {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  /* ul {
+    list-style: none;
+    padding-left: 0;
+  } */
+  
+  .list {
+    font-size: 1.1rem;
+    color: #555;
+    margin-left: 10px;
+    padding-left: 20px;
+    position: relative;
+    animation: slideInLeft 0.5s ease-in-out;
+    margin-bottom: 15px; /* Add more space between list items */
+    border-left: 2px solid #ff5722; /* Add a left border for a stylish touch */
+    padding: 10px 0 10px 20px; /* Adjust padding for better spacing */
+    list-style: none;
+    /* padding-left: 0; */
+  }

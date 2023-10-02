@@ -1,0 +1,38 @@
+.login-message {
+    font-size: 20px;
+    color: #fff;
+    background-color: #f44336;
+    padding: 10px;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+
+  
+    /* Center the element */
+    position: static;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 0%);
+  
+    /* Add box shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  
+  /* Keyframes for fadeInDown animation */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hover effect to change background color */
+  .login-message:hover {
+    background-color: #e74c3c;
+  }
+  
