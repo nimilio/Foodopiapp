@@ -14,7 +14,7 @@ import { Footer, Copyright } from "./components/Footer";
 import categoriesService from "./services/categories";
 import usersService from "./services/users";
 
-import "./style/navBar.css";
+import "./style/NavBar.css";
 import "./style/MyRecipes.css";
 
 
@@ -85,7 +85,7 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
                     setFilteredRecipes={setFilteredRecipes}
                     filteredRecipes={filteredRecipes}
                     searchTerm={searchTerm}
-                    setSearchTerm={setSearchTerm} />} />
+                     />} />
 
                 <Route path='/sign' element={!user ? (
                     <div className="login-container">
