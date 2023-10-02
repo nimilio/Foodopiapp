@@ -1,5 +1,3 @@
-/* CSS for Recipe Cards */
-
 .heading1-category {
     animation: fadeInDown 1.6s ease-in-out;
     margin-top: 30px;
@@ -7,7 +5,7 @@
     font-family: cursive;
     color: #333;
     text-align: center;
-    background-image: url('category.jpg'); /* Set the correct path to your image */
+    background-image: url('category.jpg');
     background-repeat: no-repeat;
     background-position: center ;
     margin-bottom: 20px;
@@ -32,10 +30,7 @@
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-    text-decoration: none; /* Remove underlines from links */
-  
-    /* Center align content */
-    /* display: flex; */
+    text-decoration: none; 
     flex-direction: column;
     align-items: center;
     text-align: left;
@@ -48,10 +43,10 @@
   }
   
   .category-card-header {
-    background-color: #f95151; /* Change this to your desired header background color */
+    background-color: #f95151;
     padding: 1px;
     width: 100%;
-    color: #fff; /* Text color for header */
+    color: #fff;
     text-align: center;
   }
   
@@ -67,10 +62,9 @@
     }
     
     .category-card-body p {
-      /* margin-bottom: 20px; */
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 3; /* number of lines for description */
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       max-height: 4em;
     }

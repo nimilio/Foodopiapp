@@ -1,61 +1,57 @@
-/* CSS for Recipe Cards */
-.recipe-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 40px;
-}
-
-.recipe-card {
-  width: 400px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-  text-decoration: none; /* Remove underlines from links */
-
-  /* Center align content */
-  /* display: flex; */
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-  color: #333;
-  animation: fadeInDown 1.6s ease-in-out;
-}
-
-.recipe-card:hover {
-  transform: translateY(-5px);
-}
-
-.card-header {
-  background-color: #007BFF; /* Change this to your desired header background color */
-  padding: 1px;
-  width: 100%;
-  color: #fff; /* Text color for header */
-  text-align: center;
-}
-
-
-.light-text {
-  color: #777; /* Lighter text color */
-}
-
-/* Style for highlighted text */
-mark {
-  background-color: yellow; /* Highlight color */
-  color: inherit; /* Inherit the text color */
-}
-
-.card-body {
-    max-height: 80px; /* Adjust the maximum height as needed */
-    overflow: hidden;
-    padding: 10px;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
-    margin: 10px 0;
+  .recipe-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
   }
+
+  .recipe-card {
+    width: 400px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    color: #333;
+    animation: fadeInDown 1.6s ease-in-out;
+  }
+
+  .recipe-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-header {
+    background-color: #007BFF; 
+    padding: 1px;
+    width: 100%;
+    color: #fff; 
+    text-align: center;
+  }
+
+
+  .light-text {
+    color: #777; 
+  }
+
+  /* Style for highlighted text */
+  mark {
+    background-color: yellow;
+    color: inherit;
+  }
+
+  .card-body {
+      max-height: 80px;
+      overflow: hidden;
+      padding: 10px;
+      text-overflow: ellipsis;
+      white-space: wrap;
+      overflow: hidden;
+      margin: 10px 0;
+    }
   
   .card-body p {
     margin: 0;
@@ -63,29 +59,16 @@ mark {
   }
   
   .card-body p::after {
-    content: '...'; /* Display ellipsis when content overflows */
+    content: '...';
     position: absolute;
     bottom: 0;
     right: 0;
-    background: white; /* Match the card background color */
+    background: white;
     padding: 0 5px;
-  }
-
-  center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Optional: This will make it take up the full viewport height */
-  }
-  
-  .center-content-inner {
-    text-align: center;
   }
   
   .no-results-image {
-    /* Add your CSS styles for the image here */
     width: 200px;
     height: 200px;
-    /* Other styles as needed */
   }
   

@@ -46,11 +46,6 @@
   .arrow.open {
     transform: translateY(-50%) rotate(180deg);
   }
-
-  /* ul {
-    list-style: none;
-    padding-left: 0;
-  } */
   
   .list {
     font-size: 1.1rem;
@@ -59,9 +54,8 @@
     padding-left: 20px;
     position: relative;
     animation: slideInLeft 0.5s ease-in-out;
-    margin-bottom: 15px; /* Add more space between list items */
-    border-left: 2px solid #ff5722; /* Add a left border for a stylish touch */
-    padding: 10px 0 10px 20px; /* Adjust padding for better spacing */
+    margin-bottom: 15px;
+    border-left: 2px solid #ff5722;
+    padding: 10px 0 10px 20px;
     list-style: none;
-    /* padding-left: 0; */
   }

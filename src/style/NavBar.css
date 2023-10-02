@@ -20,15 +20,15 @@
 }
 
 .logo {
-  width: 70px; /* Adjust the width as needed */
+  width: 70px;
   height: auto;
-  margin-right: 10px; /* Add spacing between the image and text */
+  margin-right: 10px;
 }
 
 .logo-text a {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center the text */
+  justify-content: center;
   font-size: 35px;
   text-decoration: none;
   color: blue;
@@ -39,8 +39,8 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: right; /* Align items to the right */
-  flex: 1; /* Allow navbar to take the remaining space */
+  justify-content: right; 
+  flex: 1; 
   margin-right: 100px;
   text-shadow: 2px 2px 8px #FF0000;
   
@@ -58,7 +58,7 @@
 .logged-in {
   margin-left: 30px;
   color: #FF0000;
-  max-width: 70px; /* Adjust the max-width as needed */
+  max-width: 70px; 
   word-wrap: break-word;
 }
 
@@ -66,29 +66,28 @@
 .navbar-link.sign-in {
   display: flex;
   align-items: center;
-  position: relative; /* Create a positioning context */
+  position: relative;
 }
 
 .navbar-link.sign-in::before {
   content: "";
   background-color: #ccc;
-  width: 2px; /* Adjust the width of the vertical line */
-  height: 40px; /* Adjust the height of the vertical line */
+  width: 2px;
+  height: 40px;
   position: absolute;
   top: 50%;
-  left: -10px; /* Adjust the positioning as needed */
+  left: -10px;
   transform: translateY(-50%);
 }
 
 
-/* Adjust the position of the image */
 .navbar-link.sign-in img {
-  margin-left: 10px; /* Adjust the spacing between the "Sign In" text and the image */
+  margin-left: 10px;
 }
 
 .logo-sign {
     margin-left: 10px;
-    width: 40px; /* Adjust the width as needed */
+    width: 40px;
     height: auto;
-    margin-right: 10px; /* Add spacing between the image and text */
+    margin-right: 10px;
   }

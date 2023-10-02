@@ -1,25 +1,22 @@
-/* RecipeList.css */
-
-.recipe-list-container {
+  .recipe-list-container {
     background-color: #f5f5f5;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     animation: fadeInDown 1s ease-in-out;
   }
-
- .ref {
-  text-decoration: none;
+  
+  .ref {
+    text-decoration: none;
  }
 
-  
   .recipe-list-title {
     background-image: url('recipes.jpg');
     background-repeat: no-repeat;
     padding: 128px;
     border-radius: 20px;
     font-size: 36px;
-  color: #333;
-  text-align: center;
+    color: #333;
+    text-align: center;
   }
   
   .recipe-list-ul {
@@ -57,12 +54,12 @@
   }
 
 
-.result-count {
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-    margin: 10px 0;
-  }
+  .result-count {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin: 10px 0;
+    }
   
   .pagination {
     display: flex;
@@ -97,25 +94,25 @@
   }
   
   .first-page-button,
-.last-page-button {
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: #ff6600;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin: 0 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  .last-page-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.first-page-button:hover,
-.last-page-button:hover {
-  background-color: #ff6600;
-}
+  .first-page-button:hover,
+  .last-page-button:hover {
+    background-color: #ff6600;
+  }
 
-.first-page-button:disabled,
-.last-page-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
+  .first-page-button:disabled,
+  .last-page-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
