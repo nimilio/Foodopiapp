@@ -1,0 +1,43 @@
+POST http://localhost:3001/api/recipes
+Content-Type: application/json
+Authorization: Bearer ...
+
+{
+    "name": "Christmas cupcakes",
+      "url": "https://www.bbcgoodfood.com/recipes/72622/christmas-cupcakes",
+      "Description": "These beautiful and classy little cakes make lovely gifts, and kids will enjoy decorating them too",
+      "Author": "Sara Buenfeld",
+      "Ingredients": [
+        "200g dark muscovado sugar",
+        "175g butter, chopped",
+        "700g luxury mixed dried fruit",
+        "50g glacé cherries",
+        "2 tsp grated fresh root ginger",
+        "zest and juice 1 orange",
+        "100ml dark rum, brandy or orange juice",
+        "85g/3oz pecannuts, roughly chopped",
+        "3 large eggs, beaten",
+        "85g ground almond",
+        "200g plain flour",
+        "½ tsp baking powder",
+        "1 tsp mixed spice",
+        "1 tsp cinnamon",
+        "400g pack ready-rolled marzipan(we used Dr Oetker)",
+        "4 tbsp warm apricotjam or shredless marmalade",
+        "500g pack fondant icingsugar",
+        "icing sugar, for dusting",
+        "6 gold and 6 silver muffincases",
+        "6 gold and 6 silver sugared almonds",
+        "snowflake sprinkles"
+      ],
+      "Category": "Cakes",
+      "Method": [
+        "Tip the sugar, butter, dried fruit, whole cherries, ginger, orange zest and juice into a large pan. Pour over the rum, brandy or juice, then put on the heat and slowly bring to the boil, stirring frequently to melt the butter. Reduce the heat and bubble gently, uncovered for 10 mins, stirring every now and again to make sure the mixture doesn’t catch on the bottom of the pan. Set aside for 30 mins to cool.",
+        "Stir the nuts, eggs and ground almonds into the fruit, then sift in the flour, baking powder and spices. Stir everything together gently but thoroughly. Your batter is ready.",
+        "Heat oven to 150C/130C fan/gas 2. Scoop the cake mix into 12 deep muffin cases (an ice-cream scoop works well), then level tops with a spoon dipped in hot water. Bake for 35-45 mins until golden and just firm to touch. A skewer inserted should come out clean. Cool on a wire rack.",
+        "Unravel the marzipan onto a work surface lightly dusted with icing sugar. Stamp out 12 rounds, 6cm across. Brush the cake tops with apricot jam, top with a marzipan round and press down lightly.",
+        "Make up the fondant icing to a spreading consistency, then swirl on top of each cupcake. Decorate with sugared almonds and snowflakes, then leave to set. Will keep in a tin for 3 weeks."
+      ],
+      "id": 3,
+      "userId": "65019b1a58f00e89f0e6593d"
+      }

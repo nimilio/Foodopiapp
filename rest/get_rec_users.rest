@@ -1,0 +1,27 @@
+GET http://localhost:3001/api/recipes
+
+### 
+GET http://localhost:3001/api/categories/pies
+###
+GET http://localhost:3001/api/categories/cakes
+### 
+GET http://localhost:3001/api/categories/breads
+###
+GET http://localhost:3001/api/categories/salads
+### 
+GET http://localhost:3001/api/categories/desserts
+###
+GET http://localhost:3001/api/categories/drinks
+### 
+GET http://localhost:3001/api/categories/pizzas
+###
+GET http://localhost:3001/api/categories/meats
+### 
+GET http://localhost:3001/api/categories/miscellaneouss
+###
+GET http://localhost:3001/api/categories/cookies
+### 
+GET http://localhost:3001/api/categories/tarts
+
+### 
+GET http://localhost:3001/api/users
