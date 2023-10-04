@@ -75,7 +75,7 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
                         <RecipesForm setRecipes={setRecipes} recipes={recipes} />
                         <button onClick={handleLogout}>Sign out</button>
                         <button onClick={handleDelete}>Delete Account</button>
-                    </div> : <div className="login-message">
+                    </div> : <div className="login-message fade-in">
                     You need to login to access this page!
                     </div>} />
 

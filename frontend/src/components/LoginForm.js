@@ -6,11 +6,14 @@ import "../style/LoginForm.css";
 import ErrorNotification from "./Notification";
 
 const LoginForm = ({ setUser }) => {
+    // app state has fields for username and password to store data from the form
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState(null);
 
+
+    // button for Login form
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
@@ -34,7 +37,7 @@ const LoginForm = ({ setUser }) => {
             <form onSubmit={handleLogin}>
                 <div>
         username
-                    <input
+                    <input className="login-form-input"
                         type='text'
                         value={username}
                         name='Username'
@@ -43,7 +46,7 @@ const LoginForm = ({ setUser }) => {
                 </div>
                 <div>
         password
-                    <input
+                    <input className="login-form-input"
                         type='password'
                         value={password}
                         name='Password'

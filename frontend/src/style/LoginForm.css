@@ -1,115 +1,200 @@
 @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
   }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
+
+
+
 
 .login-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.0) url('login.jpg');
-    background-size: 80% 120%;
-    animation: fadeIn 1s ease-in-out;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+  background: rgba(255, 255, 255, 0.0) url('login.jpg');
+  background-size: 80% 120%; /* Ensure the background image covers the entire container */
+  animation: fadeIn 1s ease-in-out;
+}
 
-  
+
 .login-form,
 .signup-form {
-    width: 30%;
-    padding: 20px;
-    background-color: #f9e9bbf5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
-    margin-left: 10px;
-    text-align: left;
-    margin-right: 10px
-  }
+  width: 30%; /* Adjust the width of each form as needed */
+  padding: 20px;
+  background-color: #f9e9bbf5; /* Set your desired background color */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  margin-left: 10px; /* Add some space between the forms */
+  text-align: left;
+  margin-right: 10px
+}
 
-  
-.login-form input,
-.signup-form input {
-    margin: 10px 0;
-    padding: 10px;
-    width: 80%;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
 
+
+
+/* Style your form inputs, labels, and buttons as desired */
+.login-form-input,
+.signup-form-input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Rounded corners for input fields */
+}
 .login-form button,
-.signup-form button {
-    margin: 20px 0;
-    padding: 10px;
-    width: 85%;
-    border: none;
-    border-radius: 20px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-
+.signup-form-button {
+  /* Your button styles here */
+  margin: 20px 0;
+  padding: 10px;
+  width: 85%;
+  border: none;
+  border-radius: 20px; /* Rounded corners for buttons */
+  background-color: #007bff; /* Example button background color */
+  color: #fff; /* Example button text color */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 .login-form button:hover,
-.signup-form button:hover {
-  background-color: #0056b3;
-  }
+  .signup-form button:hover {
+background-color: #0056b3; /* Example button background color on hover */
+}
 
 button[disabled] {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
-    cursor: not-allowed;
-  }
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed; /* Change cursor to indicate not-allowed */
+}
 
+/* Prevent hover styles for disabled buttons */
 button[disabled]:hover {
-    background-color: #cccccc;
-  }
-  
+  background-color: #cccccc; /* Keep the same background color on hover */
+}
+
 .signup-text {
-    animation: pulse 2s infinite;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    font-family: 'Your Fancy Font', cursive;
-    background-image: linear-gradient(45deg, #ff9966, #ff5e62);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 23px;
-    text-align: center;
-    margin-bottom: 15px;
-  }
+  animation: pulse 2s infinite; /* Apply the pulse animation */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow */
+  font-family: 'Your Fancy Font', cursive; /* Replace 'Your Fancy Font' with the actual font name */
+  background-image: linear-gradient(45deg, #ff9966, #ff5e62); /* Gradient colors */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  color: transparent; /* Make the text transparent */
+  font-size: 23px; /* Adjust the font size */
+  text-align: center;
+  margin-bottom: 15px;
+}
 
 .error-notification {
-    position: relative;
-    background-color: #ff6b6b; 
-    color: #fff; 
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin: 10px 0;
-    text-align: center;
-    animation: fadeIn 0.3s ease; 
-  }
-
+  position: relative;
+  background-color: #ff6b6b; /* Error notification background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  text-align: center;
+  animation: fadeIn 0.3s ease; /* Optional animation */
   
-  
+}
+
+.terms {
+  display:flex;
+  padding: 0.5em;
+  margin: 2em;
+  border: 3px solid #ddd;
+  background-color: #eee;
+  max-width: 270px;
+  font-size: 12px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.input {
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  transform: scale(0.7);
+}
 
 
-  
+
+.circle-icon {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: #abb3bc;
+  color: #fff;
+  border-radius: 50%;
+  width: 15px; /* Adjust the width and height as needed */
+  height: 15px;
+  cursor: pointer;
+}
+
+.info-icon {
+  font-size: 15px;
+}
+
+/* .popup-container {
+  position: fixed ;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+} */
+
+
+.popup-content {
+  position:fixed;
+  display: flex;
+  top: 60px; /* Adjust the position as needed */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.label-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Adjust spacing as needed */
+}
+
+.close-button-terms {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
