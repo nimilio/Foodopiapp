@@ -53,7 +53,7 @@ const LoginForm = ({ setUser }) => {
                         onChange={({ target }) => setPassword(target.value)}
                     />
                 </div>
-                <button type='submit' disabled={!username || !password}>Sign in</button>
+                <button className="login-form-button" type='submit' disabled={!username || !password}>Sign in</button>
 
                 {errorMessage && (
                     <ErrorNotification errorMessage={errorMessage} setErrorMessage={setErrorMessage} />

@@ -6,7 +6,7 @@ const Notification = ({ errorMessage, setErrorMessage }) => {
     // use inline style to overwrite custom style
     const closeButtonStyle = {
         position: "absolute",
-        top: "-18px",
+        top: "11px",
         right: "10px",
         cursor: "pointer",
         fontSize: "15px",

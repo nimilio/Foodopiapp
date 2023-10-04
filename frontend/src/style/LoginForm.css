@@ -59,7 +59,7 @@
   border: 1px solid #ccc;
   border-radius: 10px; /* Rounded corners for input fields */
 }
-.login-form button,
+.login-form-button,
 .signup-form-button {
   /* Your button styles here */
   margin: 20px 0;
