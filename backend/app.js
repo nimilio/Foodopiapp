@@ -35,6 +35,15 @@ app.use('/api/users', userRouters)
 app.use('/api/login', loginRouters)
 app.use('/api/categories', categoriesRouters)
 
+// catch-all route to serve 'index.html'
+app.get('/*', function(req, res) {
+	res.sendFile(path.join(__dirname, './build/index.html'), function(err) {
+		if (err) {
+			res.status(500).send(err)
+		}
+	})
+})
+
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 
