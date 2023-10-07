@@ -32,47 +32,30 @@ const SignupForm = () => {
     const [email, setEmail] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
-    const [created, setCreated] = useState(null);
     const [checked, setCheck] = useState(false);
     const [isPopupVisible, setPopupVisible] = useState(false);
 
-
-
+    
     const handleSignup = async (event) => {
         event.preventDefault();
         if (password === passwordConfirm){
             try {
-                await usersService.register({
+                const response = await usersService.register({
                     username,password,email
                 });
-                setCreated(true);
-                setErrorMessage(null);
+                setErrorMessage(response.message);
+                setEmail("");
+                setPassword("");
+                setUsername("");
+                setPasswordConfirm("");
+                setCheck(false);
             } catch (error) {
-                setErrorMessage("Login failed. Please check your credentials.");
+                setErrorMessage(error.response.data.error);
                 console.error (error);
             }
-            setEmail("");
-            setPassword("");
-            setUsername("");
-            setPasswordConfirm("");
         } else {
             setErrorMessage("Passwords do not match");
         }
-    };
-
-    const successMessage = () => {
-        setTimeout(function() {
-            const signMessage = document.querySelector(".sign-message");
-            signMessage.classList.remove("fade-in");
-            signMessage.classList.add("fade-out");
-        }, 5000);
-
-        setTimeout(function() {
-            setCreated(null);
-        }, 6000);
-        return (
-            <div className="sign-message fade-in">Account created!</div>
-        );
     };
 
     const handleCheck = () => {
@@ -152,7 +135,6 @@ const SignupForm = () => {
                     disabled={!username || !password || !passwordConfirm|| !email || !checked}>Sign up
                 </button>
                 
-                {created ? successMessage() : null}
                 {<ErrorNotification errorMessage={errorMessage} setErrorMessage={setErrorMessage} />}
             </form>
         </div>

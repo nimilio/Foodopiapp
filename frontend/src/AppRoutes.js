@@ -10,6 +10,7 @@ import About from "./components/About";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import { Footer, Copyright } from "./components/Footer";
+import Confirmation from "./components/Confirm";
 
 import categoriesService from "./services/categories";
 import usersService from "./services/users";
@@ -80,6 +81,7 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
                     </div>} />
 
                 <Route path='/about' element={<About />} />
+                <Route path='/confirm' element={<Confirmation />} />
 
                 <Route path='/search-results' element={<Results
                     setFilteredRecipes={setFilteredRecipes}
