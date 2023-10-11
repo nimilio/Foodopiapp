@@ -12,6 +12,15 @@ const Routers = ({ recipes,  setRecipes }) => {
 
     const [user, setUser] = useState(null);
 
+    useEffect(() => {
+        const loggedUser = window.localStorage.getItem("loggedUser");
+        if (loggedUser) {
+            const user = JSON.parse(loggedUser);
+            setUser(user.username);
+            recipesService.setToken(user.token);
+        }
+    }, []);
+
     return (
         <Router>
             <ScrollToTop />
@@ -35,7 +44,7 @@ const Routers = ({ recipes,  setRecipes }) => {
                         {user ? (
                             <div>
                                 <div className="logo-container">
-                                    <em className="logged-in">{user.username} logged in</em>
+                                    <em className="logged-in">{user} logged in</em>
                                     <img src='/images/login.png' alt="Food" className="logo-sign" />
                                 </div>
                             </div>
