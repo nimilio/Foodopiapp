@@ -31,6 +31,7 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
     const handleLogout = () => {
         navigate("/sign");
         setUser(null);
+        window.localStorage.removeItem("loggedUser");
     };
 
     const handleDelete = async (event) => {
@@ -72,7 +73,7 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
 
                 <Route path='/my-recipes' element={user ?
                     user && <div>
-                        <p>Hello {user.username} !</p>
+                        <p>Hello {user} !</p>
                         <RecipesForm setRecipes={setRecipes} recipes={recipes} />
                         <button onClick={handleLogout}>Sign out</button>
                         <button onClick={handleDelete}>Delete Account</button>
