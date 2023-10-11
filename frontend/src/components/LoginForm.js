@@ -11,6 +11,7 @@ const LoginForm = ({ setUser }) => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState(null);
+    const [checked, setCheck] = useState(false);
 
 
     // button for Login form
@@ -21,7 +22,10 @@ const LoginForm = ({ setUser }) => {
                 username,password
             });
             recipesService.setToken(user.token);
-            setUser(user);
+            setUser(user.username);
+            if (checked) {
+                window.localStorage.setItem("loggedUser", JSON.stringify(user));
+            }
             navigate("/my-recipes");
         } catch (error) {
             setErrorMessage("Login failed. Please check your credentials.");
@@ -52,6 +56,16 @@ const LoginForm = ({ setUser }) => {
                         name='Password'
                         onChange={({ target }) => setPassword(target.value)}
                     />
+                </div>
+                <div>
+                    <label >
+                        <input
+                            type='checkbox'
+                            checked={checked}
+                            onChange={handleCheck}
+                        />
+                        Remember me
+                    </label>
                 </div>
                 <button className="login-form-button" type='submit' disabled={!username || !password}>Sign in</button>
 
