@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import Categories from "./components/Categories";
 import Category from "./components/Category";
@@ -11,6 +11,7 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import { Footer, Copyright } from "./components/Footer";
 import Confirmation from "./components/Confirm";
+import Reset from "./components/Reset";
 
 import categoriesService from "./services/categories";
 import usersService from "./services/users";
@@ -49,6 +50,7 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
     return (
         <>
             <Routes>
+                <Route path="*" element={<Navigate to="/" />} />
                 <Route path='/' element={<Home
                     recipes={recipes}
                     setShowRecipes={setShowRecipes}
@@ -97,6 +99,7 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
                         <SignupForm />
                     </div>
                 ) : null} />
+                <Route path='/reset' element={<Reset />} />
             </Routes>
             <Footer />
             <Copyright />

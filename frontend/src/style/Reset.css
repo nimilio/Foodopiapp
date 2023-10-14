@@ -1,0 +1,67 @@
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.reset-form {
+    width: 30%; /* Adjust the width of each form as needed */
+    padding: 20px;
+    background-color: #f9e9bbf5; /* Set your desired background color */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    margin-left: 10px; /* Add some space between the forms */
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 60px;
+    margin-top: 30px;
+    
+
+    /* Center the form horizontally */
+  position:relative;
+  transform: translate(100%, 0%);
+  }
+
+  .reset-form-input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners for input fields */
+  }
+
+  .reset-form-button {
+    /* Your button styles here */
+    margin: 20px 0;
+    padding: 10px;
+    width: 85%;
+    border: none;
+    border-radius: 20px; /* Rounded corners for buttons */
+    background-color: #007bff; /* Example button background color */
+    color: #fff; /* Example button text color */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+    .reset-form button:hover {
+  background-color: #0056b3; /* Example button background color on hover */
+}
+
+.error-notification {
+  position: relative;
+  background-color: #ff6b6b; /* Error notification background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  text-align: center;
+  animation: fadeIn 0.3s ease; /* Optional animation */
+  
+}

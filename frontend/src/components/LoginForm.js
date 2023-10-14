@@ -35,7 +35,11 @@ const LoginForm = ({ setUser }) => {
         setUsername("");
     };
 
+    const handleCheck = () => {
+        setCheck(!checked);
+    };
 
+    
     return (
         <div className="login-form">
             <form onSubmit={handleLogin}>
@@ -68,6 +72,9 @@ const LoginForm = ({ setUser }) => {
                     </label>
                 </div>
                 <button className="login-form-button" type='submit' disabled={!username || !password}>Sign in</button>
+                <div>
+                    <a href="/reset">Forgot password?</a>
+                </div>
 
                 {errorMessage && (
                     <ErrorNotification errorMessage={errorMessage} setErrorMessage={setErrorMessage} />

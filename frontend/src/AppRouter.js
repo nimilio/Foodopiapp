@@ -1,12 +1,14 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Date from "./components/Date";
 import CategoryDropdown from "./components/DropdownMenu";
 import ScrollToTop from "./components/ScrollToTop";
 import AllRoutes from "./AppRoutes";
+import recipesService from "./services/recipes";
 
 
 import "./style/navBar.css";
+
 
 const Routers = ({ recipes,  setRecipes }) => {
 
@@ -21,6 +23,7 @@ const Routers = ({ recipes,  setRecipes }) => {
         }
     }, []);
 
+    
     return (
         <Router>
             <ScrollToTop />
