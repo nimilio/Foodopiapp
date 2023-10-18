@@ -4,6 +4,7 @@ import Date from "./components/Date";
 import CategoryDropdown from "./components/DropdownMenu";
 import ScrollToTop from "./components/ScrollToTop";
 import AllRoutes from "./AppRoutes";
+import SignoutDelete from "./components/SignoutDelete"
 import recipesService from "./services/recipes";
 
 
@@ -45,12 +46,7 @@ const Routers = ({ recipes,  setRecipes }) => {
 
                     <div>
                         {user ? (
-                            <div>
-                                <div className="logo-container">
-                                    <em className="logged-in">{user} logged in</em>
-                                    <img src='/images/login.png' alt="Food" className="logo-sign" />
-                                </div>
-                            </div>
+                            <SignoutDelete user={user} setUser={setUser}/>
                         ) : (
                             <Link to='/sign' className="navbar-link sign-in">
                 Sign in

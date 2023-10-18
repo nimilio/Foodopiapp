@@ -52,7 +52,7 @@ const Results = ({ filteredRecipes, searchTerm }) => {
                 </div>
             </div>
         ) :
-            <><h1 className='heading1'>Results for `&apos{ searchTerm }`&apos</h1><div className="recipe-cards">
+            <><h1 className='heading1'>Results for &quot;{ searchTerm }&quot;</h1><div className="recipe-cards">
                 {filteredRecipes.map((recipe) => (
                     <a
                         key={recipe.id}

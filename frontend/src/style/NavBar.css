@@ -55,13 +55,6 @@
   
 }
 
-.logged-in {
-  margin-left: 30px;
-  color: #FF0000;
-  max-width: 70px; 
-  word-wrap: break-word;
-}
-
 /* Add vertical line without affecting the layout */
 .navbar-link.sign-in {
   display: flex;

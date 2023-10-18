@@ -32,6 +32,7 @@ const RecipeForm = ({ setRecipes, recipes }) => {
 
     return (
         <div>
+            <p>Hello {user} !</p>
             <form onSubmit={addRecipe}>
                 <input
                     value={newRecipe}
@@ -47,7 +48,7 @@ const RecipeForm = ({ setRecipes, recipes }) => {
                 allowFullScreen
                 title="Animated GIF"
                 style={{
-                    display: "block",  // ensure the iframe is a block element
+                    display: "block",
                     margin: "0 auto",
                 }}
             ></iframe>
@@ -56,5 +57,3 @@ const RecipeForm = ({ setRecipes, recipes }) => {
 };
 
 export default RecipeForm;
-
-

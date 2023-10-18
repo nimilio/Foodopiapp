@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import Categories from "./components/Categories";
 import Category from "./components/Category";
@@ -14,7 +14,6 @@ import Confirmation from "./components/Confirm";
 import Reset from "./components/Reset";
 
 import categoriesService from "./services/categories";
-import usersService from "./services/users";
 
 import "./style/NavBar.css";
 import "./style/MyRecipes.css";
@@ -26,26 +25,6 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
     const [showRecipes, setShowRecipes] = useState(false);
     const [filteredRecipes, setFilteredRecipes] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-        navigate("/sign");
-        setUser(null);
-        window.localStorage.removeItem("loggedUser");
-    };
-
-    const handleDelete = async (event) => {
-        event.preventDefault();
-        try {
-            await usersService.remove({
-                user
-            });
-            setUser(null);
-        } catch (error) {
-            console.error (error);
-        }
-    };
 
     return (
         <>
@@ -74,12 +53,9 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
                 <Route path='/recipes' element={<Recipes recipes={recipes} />} />
 
                 <Route path='/my-recipes' element={user ?
-                    user && <div>
-                        <p>Hello {user} !</p>
-                        <RecipesForm setRecipes={setRecipes} recipes={recipes} />
-                        <button onClick={handleLogout}>Sign out</button>
-                        <button onClick={handleDelete}>Delete Account</button>
-                    </div> : <div className="login-message fade-in">
+                    <div>
+                        <RecipesForm setRecipes={setRecipes} recipes={recipes} user={user} />
+                    </div> : <div className="sign-message fade-in">
                     You need to login to access this page!
                     </div>} />
 

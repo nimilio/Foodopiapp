@@ -32,7 +32,7 @@ const newpass = async credentials => {
 };
 
 const remove = async credentials => {
-    const response = await axios.delete(deleteUrl+"/"+credentials.user.username, credentials);
+    const response = await axios.delete(deleteUrl+"/"+credentials.user, credentials);
     return response.data;
 };
 
