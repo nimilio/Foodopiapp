@@ -79,7 +79,7 @@ signupRouter.post('/confirm', async (request, response) => {
 
 	// check if the token exists in the map
 	if (!confirmationTokens.has(token)) {
-		return response.status(400).json({ error: 'Invalid confirmation token.' })
+		return response.status(400).json({ error: 'Invalid confirmation token. (Refresh for slower networks)' })
 	}
 
 	// find the associated user data in the map

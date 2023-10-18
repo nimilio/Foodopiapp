@@ -3,6 +3,7 @@
 const config = require('./utils/config')
 const express = require('express')
 const app = express()
+const path = require('path')
 const cors = require('cors')
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
@@ -12,6 +13,7 @@ const recipeRouters = require('./controllers/recipes')
 const userRouters = require('./controllers/users')
 const loginRouters = require('./controllers/login')
 const categoriesRouters = require('./controllers/categories')
+const signupRouters = require('./controllers/signup')
 
 const mongoose = require('mongoose')
 mongoose.set('strictQuery',false)
@@ -34,6 +36,7 @@ app.use('/api/recipes', recipeRouters)
 app.use('/api/users', userRouters)
 app.use('/api/login', loginRouters)
 app.use('/api/categories', categoriesRouters)
+app.use('/api/signup', signupRouters)
 
 // catch-all route to serve 'index.html'
 app.get('/*', function(req, res) {

@@ -1,10 +1,14 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const loginRouter = require('express').Router()
+const nodemailer = require('nodemailer')
+const config = require('../utils/config')
 const User = require('../models/user')
+const randomstring = require('randomstring')
 
 
 const resetCodes = new Map()
+
 
 loginRouter.post('/', async (request, response) => {
 	const { username, password } = request.body
