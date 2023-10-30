@@ -14,7 +14,13 @@ const getTokenFrom = request => {
 
 recipesRouter.get('/', async (request, response, next) => {
 	try {
-		const recipes = await Recipes.find({}).populate('user', { username: 1 })
+		// find recipes where 'visible' does not exist or is false
+		const recipes = await Recipes.find({
+			$or: [
+				{ visible: { $exists: false } },
+				{ visible: false }
+			]
+		}).populate('user', { username: 1 })
 		response.json(recipes)
 	} catch (error) {
 		console.error('Error fetching recipes from the database:', error)
@@ -22,7 +28,20 @@ recipesRouter.get('/', async (request, response, next) => {
 	}
 })
 
+recipesRouter.get('/myrecipes', async (request, response, next) => {
+	try {
+		const username = request.query.username
+		const recipes = await Recipes.find({}) 
+			.populate('user', { username: 1 })
 
+		// Filter the recipes by the provided username
+		const userRecipes = recipes.filter(recipe => recipe.user && recipe.user.username === username)
+		response.json(userRecipes)
+	} catch (error) {
+		console.error('Error fetching recipes from the database:', error)
+		next(error)
+	}
+})
 
 
 recipesRouter.post('/', async (request, response, next) => {
@@ -30,6 +49,7 @@ recipesRouter.post('/', async (request, response, next) => {
 	if (body.name === undefined) {
 		return response.status(400).json({ error : 'Recipe name is missing' })
 	}
+
 	const decodedToken = jwt.verify(getTokenFrom(request), process.env.SECRET)
 	if (!decodedToken.id) {
 		return response.status(401).json({ error: 'token invalid' })
@@ -38,20 +58,22 @@ recipesRouter.post('/', async (request, response, next) => {
 
 	const recipe = new Recipes({
 		name: body.name,
-		url: body.url,
-		author: body.author,
-		ingredients: body.ingredients,
 		category: body.category,
+		ingredients: body.ingredients,
 		method: body.method,
-		id: body.id,
-		user: user.id
+		author: body.author,
+		url: body.url,
+		user: user.id,
+		visible: body.visible,
+		username: body.username
 	})
 
 	try {
 		const savedRecipe = await recipe.save()
+		// store recipe id in the recipes field
 		user.recipes = user.recipes.concat(savedRecipe._id)
 		await user.save()
-		response.status(201).json(savedRecipe)
+		response.status(200).json({ message: 'Recipe created!' })
 	} catch(error) {
 		next(error)
 	}
