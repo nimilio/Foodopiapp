@@ -12,6 +12,7 @@ const recipeSchema = new mongoose.Schema({
 	ingredients: Array,
 	category: String,
 	method: Array,
+	visible: Boolean,
 	// the recipe has an array of references to users who saved it
 	user: {
 		type: mongoose.Schema.Types.ObjectId,
