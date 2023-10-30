@@ -10,17 +10,16 @@ const randomstring = require('randomstring')
 const resetCodes = new Map()
 
 
-loginRouter.post('/', async (request, response) => {
+loginRouter.post('/signin', async (request, response) => {
 	const { username, password } = request.body
 
 	// search user in database
 	const user = await User.findOne({ username })
-	// check password with bcrypt since passwords are not saved to the database
+	// check password with bcrypt
 	const passwordCorrect = user === null
 		? false
 		: await bcrypt.compare(password, user.passwordHash)
 
-	// 401 unauthorised
 	if (!(user && passwordCorrect)) {
 		return response.status(401).json({
 			error: 'invalid username or password'
@@ -32,15 +31,13 @@ loginRouter.post('/', async (request, response) => {
 		id: user._id,
 	}
 
-	// create token,  expires in 60*60 seconds
-	const token = jwt.sign(userForToken, process.env.SECRET,
-		{ expiresIn: 2 }
-	)
+	const token = jwt.sign(userForToken, process.env.SECRET)
 
 	response
 		.status(200)
 		.send({ token, username: user.username, name: user.name })
 })
+
 
 loginRouter.post('/resetCode', async (request, response) => {
 
