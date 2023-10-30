@@ -36,7 +36,7 @@ const Home = ({  recipes, setShowRecipes, setFilteredRecipes, setSearchTerm }) =
 
         const filtered = recipes.filter((recipe) => {
             const foundInName = recipe.name.toLowerCase().includes(searchTerm);
-            const foundInDescription = recipe.description.toLowerCase().includes(searchTerm);
+            const foundInDescription = (recipe.description || "").toLowerCase().includes(searchTerm);
             const foundInIngredients = recipe.ingredients && recipe.ingredients.some((ingredient) =>
                 ingredient.toLowerCase().includes(searchTerm)
             );
