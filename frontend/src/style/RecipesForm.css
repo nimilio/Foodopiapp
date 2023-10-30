@@ -1,0 +1,182 @@
+.recipes-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; 
+}
+
+.form-title {
+  animation: pulse 2s infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: '', cursive;
+  background-image: linear-gradient(45deg, #ff9966, #ff5e62);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 45px;
+  margin-top: -110px;
+}
+  
+  .recipes-form input,
+  .recipes-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 20px -10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .recipes-form input:focus,
+  .recipes-form textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+  }
+  
+  .recipes-form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .recipes-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+
+  .public-checkbox {
+    display: flex;
+    align-items: left;
+  }
+  
+  .public-checkbox label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .public-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Style the checkbox visually */
+  .public-checkbox input[type="checkbox"] {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #fff;
+  }
+  
+
+  /* plus icon for ingredients */
+
+.input-group {
+    display:flex;
+    align-items: center;
+  }
+  
+
+  .add-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 30px !important;
+    height: 20px !important;
+    margin-left: -30px;
+    margin-right: -120px;
+    padding: 10px;
+  }
+  
+  
+  .add-button svg,
+  .delete-button svg {
+    font-size: 10px;
+  }
+
+  .ingredient {
+    display: flex;
+    align-items: center;
+    margin: 5px 0; 
+    font-family:Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: lighter;
+    margin-left: -20px;
+  }
+
+  .ing-ul {
+    list-style: none;
+  }
+
+  .ing-ul svg{
+    margin-right: 20px;
+  }
+
+  
+  .delete-button {
+    background-color: rgb(255, 93, 139) !important;
+    height: 20px !important;
+    width: 30px !important;
+    color: white;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 10px;
+  }
+  
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    background-color: #8f8e8e;
+    color: #fff;
+    padding: 1px;
+    border-radius: 3px;
+    left: 58%;
+    transform: translateY(115%);
+    text-align: center;
+    width: 100px;
+    font-size: 12px;
+  }
+
+   .add-button:hover .tooltip {
+    display: block;
+  }
+
+  .delete-tooltip {
+    background-color: #8f8e8e;
+    color: #fff;
+    padding: 2px;
+    border-radius: 3px;
+    transform: translateY(-50%);
+    transform: translateX(10%);
+    text-align: center;
+    font-size: 12px;
+  }
+  
+
+  .flower-image {
+    width: 100%;
+    margin-top: -20px;
+  }
