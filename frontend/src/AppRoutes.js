@@ -12,6 +12,8 @@ import SignupForm from "./components/SignupForm";
 import { Footer, Copyright } from "./components/Footer";
 import Confirmation from "./components/Confirm";
 import Reset from "./components/Reset";
+import MyRecipes from "./components/MyRecipes";
+import RecipeDetails from "./components/RecipeDetails";
 
 import categoriesService from "./services/categories";
 
@@ -19,7 +21,7 @@ import "./style/NavBar.css";
 import "./style/MyRecipes.css";
 
 
-const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
+const AllRoutes = ({ recipes, user, setUser, setRecipes, myRecipes, setMyRecipes }) => {
 
     // eslint-disable-next-line no-unused-vars
     const [showRecipes, setShowRecipes] = useState(false);
@@ -53,11 +55,18 @@ const AllRoutes = ({ recipes, user, setUser, setRecipes }) => {
                 <Route path='/recipes' element={<Recipes recipes={recipes} />} />
 
                 <Route path='/my-recipes' element={user ?
-                    <div>
-                        <RecipesForm setRecipes={setRecipes} recipes={recipes} user={user} />
+                    <div className="my-recipes-container">
+                        <div className="my-recipes">
+                            <MyRecipes myRecipes={myRecipes} setMyRecipes={setMyRecipes} user={user}/>
+                        </div>
+                        <div className="recipes-form">
+                            <RecipesForm setRecipes={setRecipes} recipes={recipes} user={user} />
+                        </div>
                     </div> : <div className="sign-message fade-in">
                     You need to login to access this page!
-                    </div>} />
+                    </div>}>
+                </Route>
+                <Route path="/my-recipes/:recipeName" element={<RecipeDetails myRecipes={myRecipes} />} />
 
                 <Route path='/about' element={<About />} />
                 <Route path='/confirm' element={<Confirmation />} />

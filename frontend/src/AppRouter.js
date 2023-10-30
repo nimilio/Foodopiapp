@@ -14,6 +14,7 @@ import "./style/navBar.css";
 const Routers = ({ recipes,  setRecipes }) => {
 
     const [user, setUser] = useState(null);
+    const [myRecipes, setMyRecipes] = useState([]);
 
     useEffect(() => {
         const loggedUser = window.localStorage.getItem("loggedUser");
@@ -21,6 +22,9 @@ const Routers = ({ recipes,  setRecipes }) => {
             const user = JSON.parse(loggedUser);
             setUser(user.username);
             recipesService.setToken(user.token);
+            recipesService.getMy(user).then(allMyRecipes => {
+                setMyRecipes(allMyRecipes);
+            });
         }
     }, []);
 
@@ -58,7 +62,7 @@ const Routers = ({ recipes,  setRecipes }) => {
 
                 <Date />
             </div>
-            <AllRoutes user={user} recipes={recipes} setRecipes={setRecipes} setUser={setUser} />
+            <AllRoutes user={user} recipes={recipes} setRecipes={setRecipes} setUser={setUser} myRecipes={myRecipes} setMyRecipes={setMyRecipes} />
         </Router>
     );
 };
