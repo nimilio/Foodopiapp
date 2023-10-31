@@ -56,6 +56,13 @@ recipesRouter.post('/', async (request, response, next) => {
 	}
 	const user = await User.findById(decodedToken.id)
 
+	// Check if a recipe with the same name already exists
+	const existingRecipe = await Recipes.findOne({ name: body.name, user: user.id })
+
+	if (existingRecipe) {
+		return response.status(400).json({ error: 'Recipe with the same name already exists' })
+	}
+
 	const recipe = new Recipes({
 		name: body.name,
 		category: body.category,
