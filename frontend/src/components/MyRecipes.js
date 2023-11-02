@@ -22,7 +22,7 @@ const MyRecipes = ({ myRecipes, setMyRecipes, user }) => {
                     <li className="recipe-name" key={index}>
                         <span
                             style={{ cursor: "pointer" }}
-                            onClick={() => navigate(encodeURIComponent(recipe.name))}
+                            onClick={() => navigate(`/my-recipes/${recipe.name}`)}
                         >
                             {recipe.name}
                         </span>
