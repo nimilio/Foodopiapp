@@ -86,17 +86,17 @@ recipesRouter.post('/', async (request, response, next) => {
 	}
 })
 
-recipesRouter.delete('/:id', async (request, response, next) => {
-	const idToDelete = Number(request.params.id)
+recipesRouter.delete('/myrecipes/:name', async (request, response, next) => {
+	const nameToDelete = request.params.name
 	try {
-		const deletedRecipe = await Recipes.findOneAndDelete({ id: idToDelete })
+		const deletedRecipe = await Recipes.findOneAndDelete({ name: nameToDelete })
 
 		if (deletedRecipe) {
-			response.status(204).end() // Recipe found and deleted successfully
+			response.status(204).end()
 		} else {
-			response.status(404).json({ message: 'Recipe not found' }) // Recipe not found (null value)
+			response.status(404).json({ message: 'Recipe not found' })
 		}
-	} catch (error) { // Promise is rejected - 400: request not understood by the server
+	} catch (error) { // rejected promise 400
 		console.error('Error finding and deleting recipe:', error)
 		next(error)
 	}
