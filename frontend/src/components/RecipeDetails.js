@@ -1,14 +1,32 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "../style/RecipeDetails.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import recipeService from "../services/recipes";
 
 
 
 const RecipeDetails = ({ myRecipes }) => {
     const { recipeName } = useParams();
+    const navigate = useNavigate();
     const recipe = myRecipes.find(recipe => recipe.name === decodeURIComponent(recipeName));
 
     const { name, user, visible, ...otherProperties } = recipe;
+
+    const deleteClick = async (event) => {
+        event.preventDefault();
+        console.log(recipe.name);
+        try {
+            const response = await recipeService
+                .remove(
+                    recipe.name
+                );
+            navigate("/my-recipes");
+        } catch (error) {
+            console.error (error);
+        }
+    };
 
     const renderProperty = (key, value) => {
         if (value) {
@@ -49,6 +67,12 @@ const RecipeDetails = ({ myRecipes }) => {
             <h2 className="recipe_name">{recipe.name}</h2>
             <div className="property-list">
                 {Object.keys(otherProperties).map((key) => renderProperty(key, otherProperties[key]))}
+            </div>
+            <div className="delrec-button-container">
+                <button onClick={deleteClick} className="delrec-button">
+                    <i className="fas fa-trash-alt"><FontAwesomeIcon icon={faTrash} /></i>
+                    Delete recipe
+                </button>
             </div>
         </div>
     );
