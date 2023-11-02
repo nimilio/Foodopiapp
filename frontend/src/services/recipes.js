@@ -1,5 +1,6 @@
 import axios from "axios";
 const baseUrl = "api/recipes";
+const myRecUrl = "api/recipes/myrecipes";
 
 let token = null;
 
@@ -21,6 +22,16 @@ const create = async newObject => {
     return response.data;
 };
 
+const getMy = (user) => {
+    const request = axios.get(`${myRecUrl}?username=${user}`);
+    return request.then(response => response.data);
+};
+
+const remove = async name => {
+    const response = await axios.delete(`/${myRecUrl}/${name}`);
+    console.log(response);
+    return response.data;
+};
 
 
-export default { getAll, create, setToken };
+export default { getAll, create, setToken, getMy, remove };
