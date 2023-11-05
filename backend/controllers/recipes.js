@@ -86,6 +86,36 @@ recipesRouter.post('/', async (request, response, next) => {
 	}
 })
 
+recipesRouter.put('/myrecipes/:name', async (request, response, next) => {
+	const body = request.body
+	const recipeName = request.params.name
+	const recipe = await Recipes.findOne({ name: recipeName })
+
+	if ( recipe ) {
+		const recipeUpdate = {
+			name: body.name,
+			category: body.category,
+			ingredients: body.ingredients,
+			method: body.method,
+			author: body.author,
+			url: body.url
+		}
+
+		try {
+			const updatedRecipe = await Recipes.findOneAndUpdate({ name: recipeName }, recipeUpdate, { new: true })
+
+			if (updatedRecipe) {
+				response.status(204).end()
+			}
+		} catch (error) {
+			console.error('Error finding and updating recipe:', error)
+			next(error)
+		}
+	}else {
+		return response.status(401).json({ error: 'Recipe not found' })
+	}
+})
+
 recipesRouter.delete('/myrecipes/:name', async (request, response, next) => {
 	const nameToDelete = request.params.name
 	try {
