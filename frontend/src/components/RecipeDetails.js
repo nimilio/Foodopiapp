@@ -4,6 +4,7 @@ import "../style/RecipeDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import recipeService from "../services/recipes";
+import EditRecipesForm from "./EditRecipesForm";
 
 
 
@@ -13,6 +14,9 @@ const RecipeDetails = ({ myRecipes }) => {
     const recipe = myRecipes.find(recipe => recipe.name === decodeURIComponent(recipeName));
 
     const { name, user, visible, ...otherProperties } = recipe;
+
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedRecipe, setEditedRecipe] = useState({ ...recipe });
 
     const deleteClick = async (event) => {
         event.preventDefault();
@@ -26,6 +30,10 @@ const RecipeDetails = ({ myRecipes }) => {
         } catch (error) {
             console.error (error);
         }
+    };
+
+    const editClick = () => {
+        setIsEditing(true);
     };
 
     const renderProperty = (key, value) => {
@@ -64,16 +72,29 @@ const RecipeDetails = ({ myRecipes }) => {
 
     return (
         <div className="recipe-details">
-            <h2 className="recipe_name">{recipe.name}</h2>
-            <div className="property-list">
-                {Object.keys(otherProperties).map((key) => renderProperty(key, otherProperties[key]))}
-            </div>
-            <div className="delrec-button-container">
-                <button onClick={deleteClick} className="delrec-button">
-                    <i className="fas fa-trash-alt"><FontAwesomeIcon icon={faTrash} /></i>
-                    Delete recipe
-                </button>
-            </div>
+            {isEditing ? (
+                <EditRecipesForm
+                    recName={recipe.name}
+                    recipe={otherProperties}
+                    setIsEditing={setIsEditing}
+                    onCancel={() => setIsEditing(false)} />
+            ) : (
+                <>
+                    <h2 className="recipe_name">{recipe.name}</h2>
+                    <div className="property-list">
+                        {Object.keys(otherProperties).map((key) => renderProperty(key, otherProperties[key]))}
+                    </div>
+                    <div className="delrec-button-container">
+                        <button onClick={editClick} className="edit-button">
+                            <i className="fas fa-trash-alt"><FontAwesomeIcon icon={faPenToSquare} /></i>
+                                    Edit recipe
+                        </button>
+                        <button onClick={deleteClick} className="delrec-button">
+                            <i className="fas fa-trash-alt"><FontAwesomeIcon icon={faTrash} /></i>
+                                    Delete recipe
+                        </button>
+                    </div>
+                </>)}
         </div>
     );
 };

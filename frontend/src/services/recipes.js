@@ -29,9 +29,13 @@ const getMy = (user) => {
 
 const remove = async name => {
     const response = await axios.delete(`/${myRecUrl}/${name}`);
-    console.log(response);
+    return response.data;
+};
+
+const update = async objectToUpdate => {
+    const response = await axios.put(`/${myRecUrl}/${objectToUpdate.oldName}`, objectToUpdate);
     return response.data;
 };
 
 
-export default { getAll, create, setToken, getMy, remove };
+export default { getAll, create, setToken, getMy, update, remove };
